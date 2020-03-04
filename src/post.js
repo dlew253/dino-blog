@@ -1,3 +1,6 @@
+//Wont render multiple comment posts
+//good for single runs
+
 import React, {Component} from "react";
 
 let elems = {
@@ -24,6 +27,18 @@ class Body extends Component {
     render () {
         return (
             <p> {this.props.body} </p>
+        )
+    }
+}
+class Button extends Component {
+    render() {
+        return (
+            <input type="text" 
+                    name="body"
+                    value={this.state.body}
+                    onChange={(e) => this.editBody(e, "body")}
+                    />
+                    <button onClick = {e => this.addText(e)}>Edit Body</button>
         )
     }
 }
